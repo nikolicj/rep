@@ -91,7 +91,7 @@ Applying a transformation to IMU data requires transforming both the body and th
 Topics
 ------
 
-The following topics are expected to be common to many devices - an IMU device driver is expected to publish at least one. Note that some of these topics may be also published by support libraries, rather than the base driver implementation. All below message types are supplemented with a std_msgs/Header, containing time and coordinate frame information.
+The following topics are expected to be common to many devices - an IMU device driver is expected to publish at least one. Note that some of these topics may be also published by support libraries, rather than the base driver implementation. All message types below are supplemented with a std_msgs/Header, containing time and coordinate frame information.
 
 
 * `imu/data_raw` (sensor_msgs/Imu)
@@ -107,7 +107,7 @@ The following topics are expected to be common to many devices - an IMU device d
   - Sensor output containing magnetometer data.
 
 
-All message types provide a covariance matrix (see REP 103 [1]_) alongside the data field (`*_covariance`). If the data's covariance is unknown, all elements of the covariance matrix should be set to 0, unless overriden by a parameter. If a data field is unreported, the first element (`0`) of the covariance matrix should be set to `-1`.
+All message types provide a covariance matrix (see REP 103 [1]_) alongside the data field (`*_covariance`). If the data's covariance is unknown, all elements of the covariance matrix should be set to 0, unless overridden by a parameter. If a data field is unreported, the first element (`0`) of the covariance matrix should be set to `-1`.
 
 Namespacing
 '''''''''''

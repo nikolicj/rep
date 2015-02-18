@@ -62,9 +62,9 @@ Data Sources
 
 * Accelerometers
 
-  - The accelerometers report linear acceleration data in the body frame of the device. This data is output from the driver as a 3D vector, with the components representing the deflection of the internal accelerometers.
+  - The accelerometers report linear acceleration data in the body frame of the device. This data is output from the driver as a 3D vector, representing the specific force acting on the sensor.
 
-  - When the device is at rest, the vector will represent the deflection solely due to gravity, and will always point 'up' away from the earth's gravitational center. This data must be in m/s^2.
+  - When the device is at rest, the vector will represent the deflection solely due to gravity, and will always point 'up' - away from the earth's gravitational center. This data must be in m/s^2.
 
 * Gyroscopes
 

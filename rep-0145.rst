@@ -26,9 +26,9 @@ Frame Conventions
 
 An IMU device may measure data with respect to two frames, specified by the manufacturer:
 
-* The **body frame** represents the internal device axes. These may be found either in the device specification documents, and sometimes printed directly on the device body. This frame is fixed to the device orientation.
+* The device **body frame** represents the device's internal axes. These may be found either in the device specification documents, and sometimes printed directly on the device body. This frame is fixed to the device orientation.
 
-* If an orientation estimate is provided (see `Data Reporting`_), the **world frame** represents the external reference frame for the device. This frame is fixed in one of two orientations, with the relevant conventions from REP 103 [1]_ :
+* If an orientation estimate is provided (see `Data Reporting`_), the device **world frame** represents the external reference frame for the device. This frame is fixed in one of two orientations, with the relevant conventions from REP 103 [1]_ :
 
   - For NED type IMUs, the orientation of the world frame is x-north, y-east, z-down, relative to magnetic north.
 

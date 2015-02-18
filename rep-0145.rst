@@ -30,17 +30,17 @@ An IMU device may measure data with respect to two frames, specified by the manu
 
 * If an orientation estimate is provided (see `Data Reporting`_), the **world frame** represents the external reference frame for the device. This frame is fixed in one of two orientations, with the relevant conventions from REP 103 [1]_ :
 
-  - For NED type IMUs, the orientation is x-forward, y-right, and z-down. If an absolute yaw reference relative to magnetic north is available via the magnetometer, the orientation is x-north, y-east, z-down.
+  - For NED type IMUs, the orientation of the world frame is x-north, y-east, z-down, relative to magnetic north.
 
-  - For ENU type IMUs, the orientation is x-forward, y-left, and z-up. If an absolute yaw reference relative to magnetic north is available via the magnetometer, the orientation is x-east, y-north, z-up.
+  - For ENU type IMUs, the orientation of the world frame is x-east, y-north, z-up, relative to magnetic north.
 
-* If the device does not have an absolute yaw reference (magnetometer), the world frame is only aligned with an external reference along the `z` axis. The `x` and `y` axes are aligned relative to the power-on position of the sensor.
+* If the device does not have an absolute yaw reference (magnetometer), the world frame is only aligned with an external reference along the `z` axis. The `x` and `y` axes are aligned only to the power-on orientation of the sensor.
 
-* If the device does not have an absolute gravity reference (accelerometer), the world frame is not aligned to any external reference and instead aligned relative to the power-on position of the sensor.
+* If the device does not have an absolute gravity reference (accelerometer), the world frame is not aligned to any external reference and aligned entirely to the power-on orientation of the sensor.
 
 * The `frame_id` for all message types published by an IMU represents the body frame - the default frame ID for IMUs is `imu_link`. In compliance with REP 0103 [1]_, and as a hint to integrators, the default frame name for IMUs that use an NED world reference should be `imu_link_ned`.
 
-  - The configuration of the body frame relative to other frames (e.g. `base_link`) represents the mounting position of the IMU [2]_.
+  - The configuration of the body frame relative to other frames (e.g. `base_link`) represents the mounting position and orientation of the IMU [2]_.
 
   - The world frame orientation depends on the IMU device, and is not explicitly defined in the transform tree.
 

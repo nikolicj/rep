@@ -62,13 +62,13 @@ Data Sources
 
 * Accelerometers
 
-  - The accelerometers report linear acceleration data in the body frame of the device. This data is output from the driver as a 3D vector, representing the specific force acting on the sensor.
+  - The accelerometers report linear acceleration data expressed in the body frame of the device. This data is output from the driver as a 3D vector, representing the specific force acting on the sensor.
 
-  - When the device is at rest, the vector will represent the deflection solely due to gravity, and will always point 'up' - away from the earth's gravitational center. This data must be in m/s^2.
+  - When the device is at rest, the vector will represent the specific force solely due to gravity. I.e. if the body `z` axis points upwards, its `z` axis should indicate +g. This data must be in m/s^2.
 
 * Gyroscopes
 
-  - The gyroscopes report rotational velocity data in the body frame of the device. This data is output from the driver as a 3D vector, with the components representing the instantaneous velocity around each equivalent axis of the body frame.
+  - The gyroscopes report the rotational velocity of the body frame w.r.t. an inertial frame, expressed in the body frame. This data is provided from the driver as a 3D vector.
 
   - The rotational velocity is right handed with respect to the body axes, and independent of the orientation of the device. This data must be in rad/s.
 
@@ -78,7 +78,7 @@ Data Sources
 
 * Orientation
 
-  - The IMU sensor may provide a fused orientation estimate. This data is output from the driver in the form of a quaternion, which represents the orientation of the body frame in the world frame.
+  - The IMU sensor may provide a fused orientation estimate. This data is output from the driver in the form of a quaternion, which represents the orientation of the body frame w.r.t. the world frame.
 
   - In the neutral orientation, the body frame is aligned with the world frame, hence the orientation will be the identity quaternion.
 
